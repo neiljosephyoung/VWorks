@@ -4,7 +4,7 @@ import org.springframework.http.ResponseEntity;
 
 import java.util.regex.Pattern;
 
-abstract public  class RegexChecker {
+ public abstract class RegexChecker {
 
     protected abstract String getRegex();
 

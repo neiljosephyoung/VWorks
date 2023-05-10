@@ -1,14 +1,10 @@
 package com.example.VWorks.Service;
 
-import com.fasterxml.jackson.databind.ObjectMapper;
 import org.json.JSONArray;
 import org.json.JSONObject;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
-import org.springframework.web.bind.annotation.RequestBody;
 
-import java.io.DataInput;
-import java.io.IOException;
 import java.time.Duration;
 import java.time.Instant;
 import java.util.Arrays;
@@ -20,8 +16,6 @@ public class AlgorithmService {
 
     public ResponseEntity mergeSort(String body) {
         try {
-            //todo get array of data from json request body and sort
-            // give end user a response with status message, sorted array, timetaken
             JSONObject jsonBodyObject = new JSONObject(body);
             if(!jsonBodyObject.has("array")){
                 //no array data found created random array
