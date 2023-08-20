@@ -3,14 +3,17 @@ package com.example.VWorks.Controller;
 import com.example.VWorks.Service.DataService;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
-
 import java.util.Optional;
 
+/**
+ * @Author : Neil Young
+ * @Description :
+ * */
 @RestController
 @RequestMapping("/api/v1/Data")
 public class DataController {
 
-    DataService dataService;
+    private DataService dataService;
     public DataController(DataService dataService){
         this.dataService = dataService;
     }
@@ -36,11 +39,15 @@ public class DataController {
             return dataService.getCountryCodes();
         }
     }
-
-    @GetMapping("/test")
-    public String test(@RequestParam(required = false) String test){
-        return String.format("Here's the test query parameter : %s", test) ;
-    }
-
-
+//    simpleJdbcCallFunction = new SimpleJdbcCall(linkJdbcTemplate).withFunctionName("IMP_MOVEMENT_INSERT");
+//    SqlParameterSource sqlParams = new MapSqlParameterSource()
+//            .addValue("OrderNo", docNum)
+//            .addValue("Line", poItem)
+//            .addValue("Product", material)
+//            .addValue("Site", plant)
+//            .addValue("Ref1", stgeLoc)
+//            .addValue("Qty", entryQnt)
+//            .addValue("MovementIndicator", mvtInd);
+//
+//                simpleJdbcCallFunction.execute(sqlParams);
 }
